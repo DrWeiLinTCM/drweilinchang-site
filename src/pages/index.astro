@@ -9,6 +9,10 @@ const recentCases = allCases.sort((a, b) => b.data.publishDate.getTime() - a.dat
 const allArticles = await getCollection('articles', ({ data }) => !data.draft);
 const recentArticles = allArticles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 3);
 
+// 收集所有醫案標籤 → 用來判斷細項要不要變連結
+const existingTags = new Set<string>();
+allCases.forEach((p) => p.data.tags.forEach((t) => existingTags.add(t)));
+
 const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' });
 ---
 
@@ -29,14 +33,22 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
     <div class="wrap">
       <div class="section__eyebrow">Specialties</div>
       <h2 class="section__title">主治項目</h2>
-      <p class="section__subtitle">以下為門診常見主治範圍</p>
-      <div class="spec-grid">
+      <p class="section__subtitle">點擊細項可查看相關治療案例</p>
+      <div class="spec-grid spec-grid--four">
         {SITE.specialties.map((s) => (
           <div class="spec-card">
             <div class="spec-card__icon">{s.icon}</div>
             <h3 class="spec-card__title">{s.group}</h3>
             <ul class="spec-card__list">
-              {s.items.map((item) => <li>{item}</li>)}
+              {s.items.map((item) => (
+                <li>
+                  {existingTags.has(item.tag) ? (
+                    <a href={`/cases/tag/${item.tag}/`} class="spec-link">{item.label}</a>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         ))}
@@ -151,13 +163,13 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
           </thead>
           <tbody>
             <tr>
-              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5);">{SITE.clinic.amTime}</td>
+              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.amTime}</td>
               {SITE.clinic.hours.map((h) => (
                 <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`}></span></td>
               ))}
             </tr>
             <tr>
-              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5);">{SITE.clinic.pmTime}</td>
+              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.pmTime}</td>
               {SITE.clinic.hours.map((h) => (
                 <td><span class={`hours-dot hours-dot--${h.pm ? 'on' : 'off'}`}></span></td>
               ))}

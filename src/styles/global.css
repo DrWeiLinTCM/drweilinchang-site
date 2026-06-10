@@ -162,3 +162,14 @@ main { flex: 1; }
 
 /* Print */
 @media print { .header, .footer, .cta-banner, .clinic-section { display: none; } }
+
+/* ===== 主治項目四欄版 ===== */
+.spec-grid--four { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+@media (max-width: 1000px) { .spec-grid--four { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .spec-grid--four { grid-template-columns: 1fr; } }
+.spec-grid--four .spec-card { padding: 1.5rem 1.25rem; }
+
+/* 細項連結樣式：有案例的可點 */
+.spec-link { color: var(--color-ink-soft); border-bottom: 1px dotted var(--color-accent); padding-bottom: 1px; }
+.spec-link:hover { color: var(--color-accent); border-bottom-style: solid; }
+.spec-link::after { content: ' ›'; color: var(--color-accent); font-size: 0.85em; }
