@@ -89,26 +89,24 @@ export const SITE = {
   clinic: {
     name: '樂活中醫診所',
     fullName: '台北樂活中醫診所',
-    address: '請填寫診所地址',
-    phone: '請填寫電話',
-    googleMapUrl: '', // 可貼 Google Maps 的分享連結
+    address: '台北市大安區延吉街153-2號4樓',
+    phone: '02-27400007',
+    googleMapUrl: '106臺北市大安區正聲里延吉街153-2號4樓', 
     // ↓↓↓ LINE 預約連結：格式為 https://line.me/R/ti/p/@你的LINE_ID ↓↓↓
     // 在手機上會直接開 LINE，在電腦上會顯示 QR code 掃描畫面
     lineUrl: 'https://line.me/R/ti/p/@請填入LINE_ID',
     // ↓↓↓ 看診時間表 ↓↓↓
-    hours: [
-      // 格式：{ day: '星期X', am: true/false, pm: true/false }
-      // true = 有看診，false = 休診
+    hhours: [
       { day: '一', am: false, pm: false },
       { day: '二', am: true, pm: true },
       { day: '三', am: true, pm: true },
-      { day: '四', am: true, pm: true },
-      { day: '五', am: true, pm: true },
-      { day: '六', am: true, pm: false },
+      { day: '四', am: false, pm: true },
+      { day: '五', am: false, pm: true },
+      { day: '六', am: false, pm: false },
       { day: '日', am: false, pm: false },
     ],
-    amTime: '09:00 - 12:00',
-    pmTime: '14:00 - 17:30',  // 請改成實際時段
+    amTime: '午診 13:30 - 17:00',
+    pmTime: '晚診 17:30 - 21:00',
   },
 
   // === 📱 導覽列 ===
