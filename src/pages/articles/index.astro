@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+const all = await getCollection('articles', ({ data }) => !data.draft);
+const sorted = all.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit' });
+---
+<Base title="健康知識" description="張瑋麟中醫師的衛教文章與中醫保健知識。">
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <h1 style="text-align:center;">健康知識</h1>
+      <p style="text-align:center; color:var(--color-muted); margin-bottom:2.5rem;">共 {sorted.length} 篇</p>
+      {sorted.length === 0 ? (
+        <p style="text-align:center; color:var(--color-muted);">衛教文章即將上線。</p>
+      ) : sorted.map((post) => (
+        <div class="post-list-item">
+          {post.data.cover ? (
+            <img src={post.data.cover} alt={post.data.title} class="post-list-item__cover" loading="lazy" />
+          ) : (
+            <div class="post-list-item__cover" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--color-muted);">📖</div>
+          )}
+          <div>
+            <div class="post-card__date">{fmt(post.data.publishDate)}</div>
+            <h2 style="font-size:1.2rem; margin:0.4rem 0 0.5rem;"><a href={`/articles/${post.slug}/`}>{post.data.title}</a></h2>
+            <p style="color:var(--color-ink-soft); font-size:0.93rem; line-height:1.7;">{post.data.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

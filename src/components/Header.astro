@@ -1,0 +1,19 @@
+---
+import { SITE } from '@/config';
+const path = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
+---
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="header__brand">
+      <span class="header__logo">張</span>
+      <span>{SITE.title}</span>
+    </a>
+    <nav class="header__nav">
+      {SITE.nav.map((item) => (
+        <a href={item.href} class={isActive(item.href) ? 'active' : ''}>{item.label}</a>
+      ))}
+      <a href={SITE.clinic.lineUrl} target="_blank" rel="noopener" class="header__cta">立即預約</a>
+    </nav>
+  </div>
+</header>

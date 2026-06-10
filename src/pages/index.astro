@@ -1,0 +1,170 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import { SITE } from '@/config';
+
+const allCases = await getCollection('cases', ({ data }) => !data.draft);
+const recentCases = allCases.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 3);
+
+const allArticles = await getCollection('articles', ({ data }) => !data.draft);
+const recentArticles = allArticles.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 3);
+
+const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' });
+---
+
+<Base>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero__bg" style={`background-image: url('${SITE.hero.backgroundImage}')`}></div>
+    <div class="hero__content">
+      <h1 class="hero__headline">{SITE.hero.headline}</h1>
+      <p class="hero__tagline">{SITE.hero.tagline}</p>
+      <p class="hero__desc">{SITE.hero.description}</p>
+      <a href={SITE.clinic.lineUrl} target="_blank" rel="noopener" class="hero__btn">{SITE.hero.ctaText}</a>
+    </div>
+  </section>
+
+  <!-- ===== 主治項目 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__eyebrow">Specialties</div>
+      <h2 class="section__title">主治項目</h2>
+      <p class="section__subtitle">以下為門診常見主治範圍</p>
+      <div class="spec-grid">
+        {SITE.specialties.map((s) => (
+          <div class="spec-card">
+            <div class="spec-card__icon">{s.icon}</div>
+            <h3 class="spec-card__title">{s.group}</h3>
+            <ul class="spec-card__list">
+              {s.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 治療方式 ===== -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section__eyebrow">Treatments</div>
+      <h2 class="section__title">治療方式</h2>
+      <div class="tx-grid">
+        {SITE.treatments.map((t) => (
+          <span class="tx-chip" title={t.description}>{t.name}</span>
+        ))}
+      </div>
+      <p class="tx-note">🩹 怕針也能處理 — 可選擇 AMCT 整脊或中藥調理</p>
+    </div>
+  </section>
+
+  <!-- ===== 最新案例 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__eyebrow">Cases</div>
+      <h2 class="section__title">最新案例</h2>
+      {recentCases.length === 0 ? (
+        <p style="text-align:center; color:var(--color-muted);">案例即將上線，敬請期待。</p>
+      ) : (
+        <div class="post-grid">
+          {recentCases.map((post) => (
+            <div class="post-card">
+              {post.data.cover ? (
+                <img src={post.data.cover} alt={post.data.title} class="post-card__cover" loading="lazy" />
+              ) : (
+                <div class="post-card__cover--placeholder">📋</div>
+              )}
+              <div class="post-card__body">
+                <div class="post-card__date">{fmtDate(post.data.publishDate)}</div>
+                <h3 class="post-card__title"><a href={`/cases/${post.slug}/`}>{post.data.title}</a></h3>
+                <p class="post-card__desc">{post.data.description}</p>
+                <a href={`/cases/${post.slug}/`} class="post-card__link">閱讀更多</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {recentCases.length > 0 && (
+        <div style="text-align:center;"><a href="/cases/" class="view-all">查看全部案例</a></div>
+      )}
+    </div>
+  </section>
+
+  <!-- ===== 健康知識 ===== -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section__eyebrow">Health Tips</div>
+      <h2 class="section__title">健康知識</h2>
+      {recentArticles.length === 0 ? (
+        <p style="text-align:center; color:var(--color-muted);">衛教文章即將上線，敬請期待。</p>
+      ) : (
+        <div class="post-grid">
+          {recentArticles.map((post) => (
+            <div class="post-card">
+              {post.data.cover ? (
+                <img src={post.data.cover} alt={post.data.title} class="post-card__cover" loading="lazy" />
+              ) : (
+                <div class="post-card__cover--placeholder">📖</div>
+              )}
+              <div class="post-card__body">
+                <div class="post-card__date">{fmtDate(post.data.publishDate)}</div>
+                <h3 class="post-card__title"><a href={`/articles/${post.slug}/`}>{post.data.title}</a></h3>
+                <p class="post-card__desc">{post.data.description}</p>
+                <a href={`/articles/${post.slug}/`} class="post-card__link">閱讀更多</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {recentArticles.length > 0 && (
+        <div style="text-align:center;"><a href="/articles/" class="view-all">查看全部文章</a></div>
+      )}
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-banner">
+    <h2>預約看診</h2>
+    <p>點擊下方按鈕，透過 LINE 官方帳號預約掛號</p>
+    <a href={SITE.clinic.lineUrl} target="_blank" rel="noopener" class="cta-banner__btn">LINE 立即預約</a>
+  </section>
+
+  <!-- ===== 診所資訊 + 看診時間 ===== -->
+  <section class="clinic-section">
+    <div class="clinic-grid">
+      <div>
+        <h3>📍 {SITE.clinic.fullName}</h3>
+        <p>{SITE.clinic.address}</p>
+        <p>電話：{SITE.clinic.phone}</p>
+        {SITE.clinic.googleMapUrl && (
+          <p><a href={SITE.clinic.googleMapUrl} target="_blank" rel="noopener">在 Google Maps 上查看 →</a></p>
+        )}
+      </div>
+      <div>
+        <h3>🕐 看診時間</h3>
+        <table class="hours-table">
+          <thead>
+            <tr>
+              <th></th>
+              {SITE.clinic.hours.map((h) => <th>{h.day}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5);">{SITE.clinic.amTime}</td>
+              {SITE.clinic.hours.map((h) => (
+                <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`}></span></td>
+              ))}
+            </tr>
+            <tr>
+              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5);">{SITE.clinic.pmTime}</td>
+              {SITE.clinic.hours.map((h) => (
+                <td><span class={`hours-dot hours-dot--${h.pm ? 'on' : 'off'}`}></span></td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Base>

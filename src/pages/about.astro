@@ -1,0 +1,45 @@
+---
+import Base from '@/layouts/Base.astro';
+import { SITE } from '@/config';
+---
+<Base title="關於醫師" description={SITE.doctor.bio}>
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <h1 style="text-align:center; margin-bottom:2.5rem;">關於醫師</h1>
+      <div class="about-top">
+        <img src={SITE.doctor.portrait} alt={SITE.doctor.fullName} class="about-portrait" />
+        <div>
+          <h2 style="margin-top:0;">{SITE.doctor.fullName}</h2>
+          <p style="color:var(--color-accent); margin-bottom:1.25rem;">{SITE.clinic.fullName}</p>
+          <p>{SITE.doctor.bio}</p>
+        </div>
+      </div>
+      <h2>學經歷</h2>
+      <ul class="edu-list">
+        {SITE.doctor.education.map((e) => (
+          <li><span class="edu-list__label">{e.year}</span><span>{e.text}</span></li>
+        ))}
+      </ul>
+      <h2>治學理念</h2>
+      <p>{SITE.doctor.philosophy}</p>
+      <h2>主治項目</h2>
+      {SITE.specialties.map((s) => (
+        <div style="margin-bottom:1.5rem;">
+          <h3>{s.icon} {s.group}</h3>
+          <p style="color:var(--color-ink-soft);">{s.items.join('、')}</p>
+        </div>
+      ))}
+      <h2>治療方式</h2>
+      {SITE.treatments.map((t) => (
+        <p><strong>{t.name}</strong>：{t.description}</p>
+      ))}
+      <div style="background:var(--color-accent-bg); padding:1.25rem 1.5rem; border-radius:8px; margin:2rem 0;">
+        <strong style="color:var(--color-accent);">怕針也能處理</strong>
+        <br/>若您對針具有顧慮，可選擇 AMCT 整脊或中藥調理。
+      </div>
+      <h2>聯絡方式</h2>
+      <p>診所：{SITE.clinic.fullName}<br/>地址：{SITE.clinic.address}<br/>電話：{SITE.clinic.phone}</p>
+      <a href={SITE.clinic.lineUrl} target="_blank" rel="noopener" class="hero__btn" style="margin-top:1rem;">LINE 立即預約</a>
+    </div>
+  </section>
+</Base>

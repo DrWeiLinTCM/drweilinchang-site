@@ -1,0 +1,25 @@
+---
+import { SITE } from '@/config';
+interface Props { title?: string; description?: string; type?: 'website' | 'article'; publishDate?: Date; updatedDate?: Date; image?: string; }
+const { title = SITE.title, description = SITE.description, type = 'website', publishDate, updatedDate, image } = Astro.props;
+const fullTitle = title === SITE.title ? title : `${title}｜${SITE.title}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="author" content={SITE.doctor.fullName} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+{image && <meta property="og:image" content={new URL(image, SITE.url).href} />}
+<meta property="og:site_name" content={SITE.title} />
+{publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="theme-color" content="#3BA99C" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+<link rel="sitemap" href="/sitemap.xml" />

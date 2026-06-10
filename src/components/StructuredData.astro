@@ -1,0 +1,11 @@
+---
+import { SITE } from '@/config';
+interface Props { type?: 'website' | 'article'; title?: string; description?: string; publishDate?: Date; updatedDate?: Date; tags?: string[]; }
+const { type = 'website', title = SITE.title, description = SITE.description, publishDate, updatedDate, tags = [] } = Astro.props;
+const url = new URL(Astro.url.pathname, SITE.url).href;
+const person = { '@type':'Person','@id':`${SITE.url}/#person`, name:SITE.doctor.fullName, alternateName:SITE.doctor.nameEn, jobTitle:SITE.doctor.jobTitle, description:SITE.doctor.bio, knowsAbout:SITE.doctor.knowsAbout, url:SITE.url, sameAs:SITE.doctor.sameAs };
+const ws = { '@type':'WebSite','@id':`${SITE.url}/#website`, url:SITE.url, name:SITE.title, description:SITE.description, inLanguage:SITE.lang, author:{'@id':`${SITE.url}/#person`} };
+const art = type==='article' ? { '@type':'Article', headline:title, description, url, ...(publishDate&&{datePublished:publishDate.toISOString()}), ...(updatedDate?{dateModified:updatedDate.toISOString()}:publishDate?{dateModified:publishDate.toISOString()}:{}), author:{'@id':`${SITE.url}/#person`}, inLanguage:SITE.lang, ...(tags.length>0&&{keywords:tags.join(', ')}) } : null;
+const g=[ws,person]; if(art) g.push(art);
+---
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':g})} />
