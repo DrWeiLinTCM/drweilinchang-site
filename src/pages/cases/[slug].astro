@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Base from '@/layouts/Base.astro';
+import LikeButton from '@/components/LikeButton.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('cases', ({ data }) => !data.draft);
   return posts.map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
@@ -24,8 +25,9 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
       )}
       <div class="article-content"><Content /></div>
       {post.data.tags.length > 0 && (
-        <div class="article-tags">{post.data.tags.map((t) => <span class="article-tag">{t}</span>)}</div>
+        <div class="article-tags">{post.data.tags.map((t) => <a href={`/cases/tag/${t}/`} class="article-tag">{t}</a>)}</div>
       )}
+      <LikeButton slug={`cases/${post.slug}`} />
     </div>
   </article>
 </Base>

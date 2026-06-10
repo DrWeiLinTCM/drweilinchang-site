@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 毛筆圓圈（留缺口的禪圓 enso 風格）-->
+  <path d="M 58 9 A 42 42 0 1 0 86 32"
+        fill="none" stroke="#3BA99C" stroke-width="7" stroke-linecap="round"
+        transform="rotate(-8 50 50)"/>
+  <!-- 金色細筆觸副圈，增加層次 -->
+  <path d="M 62 14 A 37 37 0 1 0 83 36"
+        fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round" opacity="0.55"
+        transform="rotate(-8 50 50)"/>
+  <!-- 張字 -->
+  <text x="50" y="63" font-family="'Noto Serif TC', 'PMingLiU', serif" font-size="38" font-weight="700"
+        fill="#1B2B3A" text-anchor="middle">張</text>
+</svg>

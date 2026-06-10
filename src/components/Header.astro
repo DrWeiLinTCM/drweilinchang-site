@@ -6,7 +6,7 @@ const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith
 <header class="header">
   <div class="header__inner">
     <a href="/" class="header__brand">
-      <span class="header__logo">張</span>
+      <img src="/logo.svg" alt={SITE.title} class="header__logo-img" width="38" height="38" />
       <span>{SITE.title}</span>
     </a>
     <nav class="header__nav">
@@ -17,3 +17,6 @@ const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith
     </nav>
   </div>
 </header>
+<style>
+  .header__logo-img { width: 38px; height: 38px; display: block; }
+</style>

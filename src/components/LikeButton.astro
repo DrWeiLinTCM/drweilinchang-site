@@ -1,0 +1,58 @@
+---
+interface Props { slug: string; }
+const { slug } = Astro.props;
+---
+<div class="like-wrap">
+  <p class="like-hint">覺得這篇文章有幫助嗎？</p>
+  <button class="like-btn" data-slug={slug} aria-label="按個愛心">
+    <span class="like-btn__icon">❤️</span>
+    <span class="like-btn__text">點個愛心</span>
+  </button>
+</div>
+
+<style>
+  .like-wrap { text-align: center; margin: 3.5rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--color-line); }
+  .like-hint { color: var(--color-muted); font-size: 0.92rem; margin-bottom: 0.75rem; }
+  .like-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #fff; border: 2px solid #f06292; color: #e91e63;
+    padding: 0.6rem 1.6rem; border-radius: 50px; font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s; font-family: inherit;
+  }
+  .like-btn:hover { background: #fce4ec; transform: scale(1.05); }
+  .like-btn:active { transform: scale(0.96); }
+  .like-btn__icon { font-size: 1.15rem; }
+</style>
+
+<script>
+  const btn = document.querySelector('.like-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      // 1. 全螢幕愛心動畫
+      for (let i = 0; i < 24; i++) {
+        const heart = document.createElement('div');
+        heart.textContent = ['❤️','💗','💖','🩷','💕'][Math.floor(Math.random()*5)];
+        heart.style.cssText = `
+          position: fixed; bottom: -50px; z-index: 9999; pointer-events: none;
+          left: ${Math.random() * 100}vw;
+          font-size: ${18 + Math.random() * 28}px;
+          animation: heartFloat ${2.2 + Math.random() * 1.8}s ease-out forwards;
+          animation-delay: ${Math.random() * 0.6}s;
+        `;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4800);
+      }
+      // 2. 靜默計數（讀者看不到數字；失敗也不影響動畫）
+      const slug = btn.getAttribute('data-slug');
+      fetch(`/api/like?slug=${encodeURIComponent(slug || '')}`, { method: 'POST' }).catch(() => {});
+    });
+  }
+</script>
+
+<style is:global>
+  @keyframes heartFloat {
+    0%   { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0; }
+    10%  { opacity: 1; }
+    100% { transform: translateY(-105vh) rotate(25deg) scale(1.15); opacity: 0; }
+  }
+</style>
