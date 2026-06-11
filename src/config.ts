@@ -15,7 +15,7 @@ export const SITE = {
   // === 🏠 首頁 Hero 區塊 ===
   hero: {
     headline: '張瑋麟中醫師',
-    tagline: '健康．是找回你對身體的控制權',
+    tagline: '健康．是助您找回對身體的控制權',
     description: '台北樂活中醫診所｜針刀．針灸．乾針．疼痛治療',
     ctaText: '立即預約',
     backgroundImage: '/images/hero.jpg',
@@ -115,7 +115,7 @@ export const SITE = {
     fullName: '台北樂活中醫診所',
     address: '台北市大安區延吉街 153-2 號 4 樓',
     phone: '02-27400007',
-    googleMapUrl: 'https://share.google/Vf3jWimk0n0ufKb6n',
+    googleMapUrl: 'https://maps.app.goo.gl/3SeBdMKNUwfmjCPj8',
     lineUrl: 'https://line.me/R/ti/p/@979rdnfb',
     hours: [
       { day: '一', am: false, pm: false },
