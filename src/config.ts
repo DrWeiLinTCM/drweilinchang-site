@@ -15,8 +15,8 @@ export const SITE = {
   // === 🏠 首頁 Hero 區塊 ===
   hero: {
     headline: '張瑋麟中醫師',
-    tagline: '經方內科．針刀疼痛．整脊復健',
-    description: '台北樂活中醫診所｜經方．乾針．針刀．董氏奇穴．AMCT 整脊',
+    tagline: '健康．是找回你對身體的控制權',
+    description: '台北樂活中醫診所｜針刀．針灸．乾針．疼痛治療',
     ctaText: '立即預約',
     backgroundImage: '/images/hero.jpg',
   },
