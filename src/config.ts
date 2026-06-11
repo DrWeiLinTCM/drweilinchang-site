@@ -114,9 +114,9 @@ export const SITE = {
     name: '樂活中醫診所',
     fullName: '台北樂活中醫診所',
     address: '台北市大安區延吉街 153-2 號 4 樓',
-    phone: '請填寫電話',
-    googleMapUrl: '',
-    lineUrl: 'https://line.me/R/ti/p/@請填入LINE_ID',
+    phone: '02-27400007',
+    googleMapUrl: 'https://share.google/Vf3jWimk0n0ufKb6n',
+    lineUrl: 'https://line.me/R/ti/p/@979rdnfb',
     hours: [
       { day: '一', am: false, pm: false },
       { day: '二', am: true, pm: true },
