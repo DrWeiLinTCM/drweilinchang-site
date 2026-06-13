@@ -173,3 +173,13 @@ main { flex: 1; }
 .spec-link { color: var(--color-ink-soft); border-bottom: 1px dotted var(--color-accent); padding-bottom: 1px; }
 .spec-link:hover { color: var(--color-accent); border-bottom-style: solid; }
 .spec-link::after { content: ' ›'; color: var(--color-accent); font-size: 0.85em; }
+
+/* ===== 主治項目五欄版 ===== */
+.spec-grid--five { grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+@media (max-width: 1100px) { .spec-grid--five { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px)  { .spec-grid--five { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px)  { .spec-grid--five { grid-template-columns: 1fr; } }
+.spec-grid--five .spec-card { padding: 1.25rem 1rem; }
+.spec-grid--five .spec-card__icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.spec-grid--five .spec-card__title { font-size: 1.05rem; margin-bottom: 0.6rem; }
+.spec-grid--five .spec-card__list li { font-size: 0.88rem; padding: 0.25rem 0 0.25rem 1.1rem; }
