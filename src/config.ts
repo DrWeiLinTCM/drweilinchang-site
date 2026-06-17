@@ -8,8 +8,8 @@ export const SITE = {
 
   hero: {
     headline: '張瑋麟中醫師',
-    tagline: '健康，是找回你對身體的控制權',
-    description: '台北樂活中醫診所｜針刀．針灸．乾針．疼痛治療',
+    tagline: '健康，是助您找回對身體的控制權',
+    description: '台北樂活中醫診所｜針刀．疼痛治療．腸胃疾患．自律神經失調',
     ctaText: '立即預約',
     backgroundImage: '/images/hero.jpg',
   },
