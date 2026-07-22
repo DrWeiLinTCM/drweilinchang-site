@@ -53,7 +53,7 @@ export const SITE = {
       ],
     },
     {
-      icon: '🦴',
+      icon: '💆',
       group: '疼痛治療（頸）',
       items: [
         { label: '手麻／頸椎神經根病變', tag: '頸椎病' },
@@ -80,7 +80,7 @@ export const SITE = {
   treatments: [
     { name: '經方', description: '以《傷寒論》為本的內科處方用藥' },
     { name: '乾針', description: '以現代解剖學定位的針刺治療' },
-    { name: '針刀', description: '處理深層筋膜沾黏與慢性痛症' },
+    { name: '小針刀', description: '處理深層筋膜沾黏與慢性痛症' },
     { name: '董氏奇穴', description: '董門特色針法，取穴精簡效專' },
     { name: 'AMCT 整脊', description: '美式器械整脊，無痛調整脊椎與關節' },
   ],
@@ -93,7 +93,7 @@ export const SITE = {
     portrait: '/images/portrait.jpg',
     bio: '台北樂活中醫診所醫師，臨床專注於腸胃調理、自律神經失調與各部位疼痛治療。內科問題擅長以《傷寒論》經方治療；疼痛則以現代解剖的乾針、針刀為主，輔以董氏奇穴與 AMCT 整脊。提供無痛中醫選擇，怕針族群亦可處理。',
     education: [
-      { year: '學歷', text: '請填寫您的學校與科系' },
+      { year: '學歷', text: '中國醫藥大學學士後中醫學系' },
       { year: '現職', text: '台北樂活中醫診所' },
       { year: '執照', text: '中醫師（請填寫字號）' },
     ],
@@ -119,9 +119,9 @@ export const SITE = {
     name: '樂活中醫診所',
     fullName: '台北樂活中醫診所',
     address: '台北市大安區延吉街 153-2 號 4 樓',
-    phone: '請填寫電話',
-    googleMapUrl: '',
-    lineUrl: 'https://line.me/R/ti/p/@請填入LINE_ID',
+    phone: '02 2740 0007',
+    googleMapUrl: 'https://maps.app.goo.gl/2PiqkYLsP4BWocdFA',
+    lineUrl: 'https://line.me/R/ti/p/@979rdnfb',
     hours: [
       { day: '一', am: false, pm: false },
       { day: '二', am: true, pm: true },
@@ -131,8 +131,8 @@ export const SITE = {
       { day: '六', am: false, pm: false },
       { day: '日', am: false, pm: false },
     ],
-    amTime: '午診 13:30-17:00',
-    pmTime: '晚診 17:30-21:00',
+    amTime: '午診 13:30-16:30',
+    pmTime: '晚診 17:00-20:30',
   },
 
   nav: [
