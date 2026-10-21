@@ -1,0 +1,26 @@
+---
+interface Props {
+  src?: string;
+  alt: string;
+  caption?: string;
+  credit?: string;
+  creditUrl?: string;
+}
+const { src, alt, caption, credit, creditUrl } = Astro.props;
+---
+{src && (
+  <figure class="article-figure">
+    <img src={src} alt={alt} class="article-cover" decoding="async" fetchpriority="high" />
+    {(caption || credit) && (
+      <figcaption>
+        {caption && <span>{caption}</span>}
+        {credit && <span>圖片來源：{creditUrl ? <a href={creditUrl} rel="noopener noreferrer">{credit}</a> : credit}</span>}
+      </figcaption>
+    )}
+  </figure>
+)}
+<style>
+  .article-figure { margin: 0 0 2.5rem; }
+  .article-figure .article-cover { display: block; margin: 0; height: auto; max-height: none; object-fit: contain; }
+  figcaption { display: grid; gap: .25rem; margin-top: .65rem; font-size: .85rem; line-height: 1.7; color: var(--color-ink-soft); }
+</style>

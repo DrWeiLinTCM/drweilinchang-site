@@ -1,0 +1,41 @@
+---
+interface Props {
+  references: { title: string; url: string; note: string }[];
+  isCase?: boolean;
+}
+const { references, isCase = false } = Astro.props;
+---
+<aside class="reading-note" aria-label="閱讀提醒">
+  <strong>{isCase ? '如何閱讀這篇醫案' : '閱讀提醒'}</strong>
+  <p>{isCase
+    ? '這是個別患者的診療觀察，改善時間與幅度不能直接推論為其他人的預期效果；同時接受多種治療，也無法單獨判定哪一項造成改善。'
+    : '本文說明臨床觀察與醫學資料；中醫辨證、現代醫學機轉及尚待驗證的假說會分開說明。'}</p>
+  <p>文中方藥與治療方式須由醫師依病況評估；正在使用的處方藥，請與原開藥醫師討論後調整。</p>
+</aside>
+{references.length > 0 && (
+  <section class="article-references" aria-labelledby="references-heading">
+    <h2 id="references-heading">參考資料與延伸閱讀</h2>
+    <p class="reference-intro">以下資料支援文中標示的一般醫學說明，並非對本篇個案處方或療效的直接驗證。</p>
+    <ol>
+      {references.map((reference) => (
+        <li>
+          <a href={reference.url} rel="noopener noreferrer">{reference.title}</a>
+          <p>{reference.note}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+<style>
+  .reading-note { margin: 2.5rem 0; padding: 1.25rem 1.5rem; border-left: 3px solid var(--color-accent); border-radius: 0 8px 8px 0; background: var(--color-bg-alt); line-height: 1.85; color: var(--color-ink-soft); }
+  .reading-note strong { color: var(--color-ink); }
+  .reading-note p { margin: .5rem 0 0; font-size: .92rem; }
+  .article-references { margin: 2.5rem 0; padding-top: 1.75rem; border-top: 1px solid var(--color-line); overflow-wrap: anywhere; }
+  .article-references h2 { font-size: 1.3rem; margin-bottom: .75rem; }
+  .reference-intro { color: var(--color-ink-soft); font-size: .9rem; line-height: 1.8; }
+  ol { padding-left: 1.4rem; }
+  li { padding: .9rem 0; line-height: 1.75; }
+  li + li { border-top: 1px solid var(--color-line); }
+  li a { font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  li p { margin: .4rem 0 0; font-size: .88rem; color: var(--color-ink-soft); }
+</style>

@@ -250,7 +250,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
           {recentCases.map((post) => (
             <div class="post-card">
               {post.data.cover ? (
-                <img src={post.data.cover} alt={post.data.title} class="post-card__cover" loading="lazy" />
+                <img src={post.data.cover} alt={post.data.coverAlt || post.data.title} class="post-card__cover" loading="lazy" />
               ) : (
                 <div class="post-card__cover--placeholder">📋</div>
               )}
@@ -282,7 +282,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
           {recentArticles.map((post) => (
             <div class="post-card">
               {post.data.cover ? (
-                <img src={post.data.cover} alt={post.data.title} class="post-card__cover" loading="lazy" />
+                <img src={post.data.cover} alt={post.data.coverAlt || post.data.title} class="post-card__cover" loading="lazy" />
               ) : (
                 <div class="post-card__cover--placeholder">📖</div>
               )}

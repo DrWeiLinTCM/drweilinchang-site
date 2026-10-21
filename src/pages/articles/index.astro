@@ -15,7 +15,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
       ) : sorted.map((post) => (
         <div class="post-list-item">
           {post.data.cover ? (
-            <img src={post.data.cover} alt={post.data.title} class="post-list-item__cover" loading="lazy" />
+            <img src={post.data.cover} alt={post.data.coverAlt || post.data.title} class="post-list-item__cover" loading="lazy" />
           ) : (
             <div class="post-list-item__cover" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--color-muted);">📖</div>
           )}
