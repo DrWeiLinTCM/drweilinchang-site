@@ -18,6 +18,14 @@ for (const item of index) {
   urls.add(item.url);
   const html = await read(`${item.url.slice(1)}index.html`);
   assert.match(html, /rel="author"/, `Missing visible author: ${item.url}`);
+  const references = html.match(/<section[^>]*aria-labelledby="references-heading"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+  assert(references, `Missing reference section: ${item.url}`);
+  assert.match(references, /href="https:\/\//, `Missing source link: ${item.url}`);
+  if (item.type === '案例') assert(html.includes('如何閱讀這篇醫案'), `Missing case context: ${item.url}`);
+  const articleData = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .flatMap((match) => JSON.parse(match[1])['@graph'] || [])
+    .find((node) => node['@type'] === 'Article');
+  assert(articleData && articleData.dateModified >= articleData.datePublished, `Invalid article dates: ${item.url}`);
 }
 for (const collection of ['cases', 'articles']) {
   const entries = await readdir(path.join(dist, collection), { withFileTypes: true });
@@ -53,4 +61,4 @@ async function checkAssets(directory) {
   }
 }
 await checkAssets(dist);
-console.log(`Verified ${index.length} searchable posts, author links, readable profile, local images, and custom 404.`);
+console.log(`Verified ${index.length} searchable posts, source links, case context, article dates, author links, local images, profile, and custom 404.`);

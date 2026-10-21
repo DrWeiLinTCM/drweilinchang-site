@@ -9,6 +9,15 @@ const cases = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     cover: z.string().optional(),
+    coverAlt: z.string().optional(),
+    coverCaption: z.string().optional(),
+    coverCredit: z.string().optional(),
+    coverCreditUrl: z.string().url().optional(),
+    references: z.array(z.object({
+      title: z.string(),
+      url: z.string().url(),
+      note: z.string(),
+    })).default([]),
     summary: z.string().optional(),
   }),
 });
@@ -22,6 +31,15 @@ const articles = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     cover: z.string().optional(),
+    coverAlt: z.string().optional(),
+    coverCaption: z.string().optional(),
+    coverCredit: z.string().optional(),
+    coverCreditUrl: z.string().url().optional(),
+    references: z.array(z.object({
+      title: z.string(),
+      url: z.string().url(),
+      note: z.string(),
+    })).default([]),
     summary: z.string().optional(),
   }),
 });

@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Base from '@/layouts/Base.astro';
 import LikeButton from '@/components/LikeButton.astro';
+import ArticleCover from '@/components/ArticleCover.astro';
+import ArticleReferences from '@/components/ArticleReferences.astro';
 import { SITE } from '@/config';
 export async function getStaticPaths() {
   const posts = await getCollection('cases', ({ data }) => !data.draft);
@@ -21,11 +23,12 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
         <h1 class="article-title">{post.data.title}</h1>
         <p class="article-desc">{post.data.description}</p>
       </header>
-      {post.data.cover && <img src={post.data.cover} alt={post.data.title} class="article-cover" />}
+      <ArticleCover src={post.data.cover} alt={post.data.coverAlt || post.data.title} caption={post.data.coverCaption} credit={post.data.coverCredit} creditUrl={post.data.coverCreditUrl} />
       {post.data.summary && (
         <div class="article-summary"><div class="article-summary__label">摘要</div>{post.data.summary}</div>
       )}
       <div class="article-content"><Content /></div>
+      <ArticleReferences references={post.data.references} isCase />
       {post.data.tags.length > 0 && (
         <div class="article-tags">{post.data.tags.map((t) => <a href={`/cases/tag/${t}/`} class="article-tag">{t}</a>)}</div>
       )}
