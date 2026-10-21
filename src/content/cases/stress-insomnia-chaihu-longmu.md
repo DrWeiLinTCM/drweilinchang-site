@@ -4,7 +4,8 @@ description: "大學生考前焦慮、難入睡與夜間醒來，依中醫心肝
 updatedDate: 2026-10-21
 publishDate: 2025-12-30
 tags: ["失眠", "經方", "自律神經失調", "傷寒論", "柴胡加龍骨牡蠣湯"]
-cover: ""
+cover: "/images/posts/stress-insomnia-chaihu-longmu.jpg"
+coverAlt: "灰色貓咪躺在床上休息"
 summary: "壓力可能增加警覺、影響睡眠，但失眠不只是交感與副交感的開關。中醫「心肝火旺、陽不入陰」是辨證語言，不能直接視為神經或荷爾蒙檢測結果。本案的六週改善是個別回饋；慢性失眠也應討論 CBT-I 等有證據的治療。"
 references:
   - {"title": "AASM 慢性失眠行為與心理治療指引（2021）", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203/", "note": "多成分失眠認知行為治療（CBT-I）有明確建議；睡眠習慣調整不等於完整 CBT-I。"}

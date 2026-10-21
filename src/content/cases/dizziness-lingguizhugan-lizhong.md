@@ -4,7 +4,9 @@ description: "44 歲女性頭暈，伴隨脹氣、逆流、軟便與睡眠不佳
 updatedDate: 2026-10-21
 publishDate: 2025-10-20
 tags: ["暈眩", "胃食道逆流", "經方", "理中湯", "失眠"]
-cover: ""
+cover: "/images/posts/dizziness-lingguizhugan-lizhong.jpg"
+coverAlt: "人物扶著額頭，周圍以旋轉線條表達頭暈的插畫"
+coverCaption: "頭暈情境示意，非本篇個案的診療照片。"
 summary: "頭暈可能與前庭、血壓、用藥或其他病況有關，需要先評估。本案以苓桂朮甘湯合理中湯方向治療後回報改善，呈現中醫整體辨證；但不能由症狀同時好轉，推論眩暈已證實來自消化系統，也不需要因此全面禁食燕麥。"
 references:
   - {"title": "Bárány Society 對 Cervical Dizziness 的立場文件（2022）", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9837683/", "note": "說明頸部問題與頭暈的診斷、機轉及研究限制。"}

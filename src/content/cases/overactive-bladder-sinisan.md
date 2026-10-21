@@ -4,7 +4,8 @@ description: "40 多歲男性曾診斷膀胱過動症，服藥效果有限並有
 updatedDate: 2026-10-21
 publishDate: 2025-12-17
 tags: ["頻尿", "經方", "自律神經失調", "四逆散", "傷寒論"]
-cover: ""
+cover: "/images/posts/overactive-bladder-sinisan.jpg"
+coverAlt: "指向廁所的英文方向指示牌"
 summary: "尿急是膀胱過動症的重要症狀，頻尿次數本身不能確診；壓力會影響症狀，也不能證明唯一病因。本案四逆散方向治療後回報改善，但沒有排尿日誌或客觀檢查可量化效果，不能宣稱優於原有藥物或副作用較少。"
 references:
   - {"title": "AUA／SUFU 原發性膀胱過動症指引（2024）", "url": "https://pubmed.ncbi.nlm.nih.gov/38651651/", "note": "說明尿急、頻尿的評估與個別化治療，包括行為訓練及藥物等選項。"}

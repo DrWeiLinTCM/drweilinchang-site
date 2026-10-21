@@ -4,7 +4,9 @@ description: "司機急性腰痛後難以翻身、起身，並有腿軟情形；
 updatedDate: 2026-10-21
 publishDate: 2025-11-25
 tags: ["急性腰挫傷", "椎間盤突出", "針刀治療", "腰痛", "疼痛治療"]
-cover: ""
+cover: "/images/posts/acute-back-strain-acupotomy.jpg"
+coverAlt: "男子扶著腰部、使用拐杖的腰痛情境示意圖"
+coverCaption: "腰痛情境示意，非本篇個案的診療照片。"
 summary: "急性腰痛若伴隨腿軟，不能只當作一般肌肉拉傷。必須分辨疼痛限制出力，或真正的神經功能缺損。本案記錄治療後的即時改善，但症狀減輕不代表已證實椎間盤問題或排除所有危險原因。"
 references:
   - {"title": "VA/DoD 下背痛臨床指引（2022）", "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/pain/lbp/index.asp", "note": "供腰痛紅旗、檢查與一般照護閱讀；不直接證明針刀或 AMCT 的療效。"}

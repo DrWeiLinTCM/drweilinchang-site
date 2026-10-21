@@ -4,7 +4,9 @@ description: "60 歲女性頭暈半年，伴隨肩頸僵硬與頸椎退化影像
 updatedDate: 2026-10-21
 publishDate: 2025-10-20
 tags: ["暈眩", "頸椎病", "針刀治療", "自律神經失調", "疼痛治療"]
-cover: ""
+cover: "/images/posts/cervicogenic-dizziness-acupotomy.jpg"
+coverAlt: "三種低頭角度與頸部負荷概念的姿勢示意圖"
+coverCaption: "低頭姿勢示意。圖中數字非本案量測資料，不能用來判定頭暈原因。"
 summary: "頭暈與肩頸不適可以同時存在，但不代表頸椎就是頭暈的原因。本案患者在治療後回報改善，屬於個別臨床觀察；目前「頸源性眩暈」的診斷與機轉仍有爭議，需要先評估其他常見及重要原因。"
 references:
   - {"title": "Bárány Society 對 Cervical Dizziness 的立場文件（2022）", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9837683/", "note": "說明頸部問題與頭暈的診斷、機轉及研究限制。"}

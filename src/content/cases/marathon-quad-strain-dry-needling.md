@@ -4,7 +4,8 @@ description: "跑者完成全馬後出現左大腿疼痛與無力，三次治療
 updatedDate: 2026-10-21
 publishDate: 2025-11-20
 tags: ["乾針", "針刀治療", "運動傷害", "疼痛治療"]
-cover: ""
+cover: "/images/posts/marathon-quad-strain-dry-needling.jpg"
+coverAlt: "戴帽子的跑者在道路上跑步，手持紅色氣球"
 summary: "運動後若有局部明顯疼痛、腫脹或軟腳，需要評估受傷與其他病況。本案的再次參賽是患者回報的結果，不能作為拉傷後短期跑全馬的建議。回場應依肌力、活動度、功能測試與負荷耐受度評估，不只看痛幾分。"
 references:
   - {"title": "Dry Needling in Sports and Sport Recovery（2025）", "url": "https://pubmed.ncbi.nlm.nih.gov/39928077/", "note": "運動員乾針研究的系統性回顧；疼痛、運動表現及長期結果的證據不同，不能直接套用為針刀效果。"}
