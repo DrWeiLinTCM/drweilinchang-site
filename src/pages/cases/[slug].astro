@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Base from '@/layouts/Base.astro';
 import LikeButton from '@/components/LikeButton.astro';
+import { SITE } from '@/config';
 export async function getStaticPaths() {
   const posts = await getCollection('cases', ({ data }) => !data.draft);
   return posts.map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
@@ -15,6 +16,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
   <article class="section">
     <div class="wrap wrap-narrow">
       <header class="article-header">
+        <div class="article-meta">作者：<a href="/about/" rel="author">{SITE.doctor.fullName}</a></div>
         <div class="article-meta">{fmt(post.data.publishDate)}{post.data.updatedDate && ` · 更新於 ${fmt(post.data.updatedDate)}`}</div>
         <h1 class="article-title">{post.data.title}</h1>
         <p class="article-desc">{post.data.description}</p>
