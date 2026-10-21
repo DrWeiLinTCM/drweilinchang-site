@@ -11,7 +11,8 @@ export const SITE = {
     tagline: '健康，是助您找回對身體的控制權',
     description: '台北樂活中醫診所｜針刀．疼痛治療．腸胃疾患．自律神經失調',
     ctaText: '立即預約',
-    backgroundImage: '/images/hero.jpg',
+    // 上傳正式背景圖片後，再填入 /images/ 下的圖片路徑。
+    backgroundImage: '',
   },
 
   // === 🩺 主治項目（五欄）===
@@ -90,12 +91,13 @@ export const SITE = {
     fullName: '張瑋麟中醫師',
     nameEn: 'Wei-Lin Chang',
     jobTitle: '中醫師',
-    portrait: '/images/portrait.jpg',
+    // 上傳正式醫師照片後，再填入 /images/ 下的圖片路徑。
+    portrait: '',
     bio: '台北樂活中醫診所醫師，臨床專注於腸胃調理、自律神經失調與各部位疼痛治療。內科問題擅長以《傷寒論》經方治療；疼痛則以現代解剖的乾針、針刀為主，輔以董氏奇穴與 AMCT 整脊。提供無痛中醫選擇，怕針族群亦可處理。',
     education: [
       { year: '學歷', text: '中國醫藥大學學士後中醫學系' },
       { year: '現職', text: '台北樂活中醫診所' },
-      { year: '執照', text: '中醫師（請填寫字號）' },
+      { year: '執照', text: '中醫師' },
     ],
     philosophy: '內科以《傷寒論》六經辨證為根本，擅長經方的臨床應用。疼痛治療以現代解剖學為基礎，使用乾針、針刀處理筋膜沾黏與結構問題，輔以董氏奇穴與 AMCT 整脊，為每一位患者尋找最適切的治療方向。',
     knowsAbout: [

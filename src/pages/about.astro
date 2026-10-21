@@ -6,8 +6,10 @@ import { SITE } from '@/config';
   <section class="section">
     <div class="wrap wrap-narrow">
       <h1 style="text-align:center; margin-bottom:2.5rem;">關於醫師</h1>
-      <div class="about-top">
-        <img src={SITE.doctor.portrait} alt={SITE.doctor.fullName} class="about-portrait" />
+      <div class:list={['about-top', { 'about-top--text-only': !SITE.doctor.portrait }]}>
+        {SITE.doctor.portrait && (
+          <img src={SITE.doctor.portrait} alt={SITE.doctor.fullName} class="about-portrait" width="600" height="800" />
+        )}
         <div>
           <h2 style="margin-top:0;">{SITE.doctor.fullName}</h2>
           <p style="color:var(--color-accent); margin-bottom:1.25rem;">{SITE.clinic.fullName}</p>
@@ -26,7 +28,7 @@ import { SITE } from '@/config';
       {SITE.specialties.map((s) => (
         <div style="margin-bottom:1.5rem;">
           <h3>{s.icon} {s.group}</h3>
-          <p style="color:var(--color-ink-soft);">{s.items.join('、')}</p>
+          <p style="color:var(--color-ink-soft);">{s.items.map((item) => item.label).join('、')}</p>
         </div>
       ))}
       <h2>治療方式</h2>

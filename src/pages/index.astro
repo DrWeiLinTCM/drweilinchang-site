@@ -18,73 +18,135 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
 
 <Base>
   <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero__bg" style={`background-image: url('${SITE.hero.backgroundImage}')`}></div>
+  <section class:list={['hero', { 'hero--no-image': !SITE.hero.backgroundImage }]}>
+    <div class="hero__bg" style={SITE.hero.backgroundImage ? `background-image: url('${SITE.hero.backgroundImage}')` : undefined}></div>
     <div class="hero__content">
       <h1 class="hero__headline">{SITE.hero.headline}</h1>
       <p class="hero__tagline">{SITE.hero.tagline}</p>
       <p class="hero__desc">{SITE.hero.description}</p>
       <div class="hero-search">
         <input
-          type="text"
+          type="search"
           id="heroSearch"
           class="hero-search__input"
           placeholder="輸入症狀或疾病，搜尋醫案與健康知識…"
           autocomplete="off"
+          aria-label="搜尋醫案與健康知識"
+          aria-controls="heroSearchResults"
         />
-        <div id="heroSearchResults" class="hero-search__results" hidden></div>
+        <div id="heroSearchResults" class="hero-search__results" role="region" aria-label="搜尋結果" aria-live="polite" hidden></div>
       </div>
     </div>
   </section>
 
   <script>
     (() => {
-      const input = document.getElementById('heroSearch');
+      const input = document.querySelector<HTMLInputElement>('#heroSearch');
       const box = document.getElementById('heroSearchResults');
-      let index = null;
+      const root = input?.closest<HTMLElement>('.hero-search');
+      if (!input || !box || !root) return;
 
-      async function loadIndex() {
-        if (index) return index;
-        const res = await fetch('/search-index.json');
-        index = await res.json();
-        return index;
+      type SearchItem = { type: string; title: string; description: string; tags: string[]; url: string };
+      let indexPromise: Promise<SearchItem[]> | undefined;
+      let requestId = 0;
+
+      function loadIndex(): Promise<SearchItem[]> {
+        if (!indexPromise) {
+          indexPromise = (async () => {
+            const res = await fetch('/search-index.json');
+            if (!res.ok || !res.headers.get('content-type')?.includes('application/json')) {
+              throw new Error('Search index unavailable');
+            }
+            const data = await res.json();
+            if (!Array.isArray(data) || !data.every((item) =>
+              item && typeof item.type === 'string' && typeof item.title === 'string' &&
+              typeof item.description === 'string' && typeof item.url === 'string' &&
+              /^\/(cases|articles)\/[^?#]+\/$/.test(item.url) &&
+              Array.isArray(item.tags) && item.tags.every((tag) => typeof tag === 'string')
+            )) throw new Error('Invalid search index');
+            return data;
+          })().catch((error) => {
+            indexPromise = undefined;
+            throw error;
+          });
+        }
+        return indexPromise;
       }
 
-      function render(results, keyword) {
-        if (!keyword) { box.hidden = true; return; }
-        if (results.length === 0) {
-          box.innerHTML = '<div class="hero-search__empty">找不到相關文章，歡迎透過 LINE 直接詢問</div>';
-          box.hidden = false;
-          return;
-        }
-        box.innerHTML = results.slice(0, 8).map(r =>
-          `<a href="${r.url}" class="hero-search__item">
-            <span class="hero-search__type hero-search__type--${r.type === '案例' ? 'case' : 'article'}">${r.type}</span>
-            <span class="hero-search__title">${r.title}</span>
-          </a>`
-        ).join('');
+      function showMessage(message: string) {
+        const messageBox = document.createElement('div');
+        messageBox.className = 'hero-search__empty';
+        messageBox.textContent = message;
+        box.replaceChildren(messageBox);
         box.hidden = false;
       }
 
-      let timer;
+      function render(results: SearchItem[]) {
+        if (results.length === 0) {
+          showMessage('找不到相關文章，歡迎透過 LINE 直接詢問');
+          return;
+        }
+        const links = results.slice(0, 8).map((result) => {
+          const link = document.createElement('a');
+          link.href = result.url;
+          link.className = 'hero-search__item';
+          const type = document.createElement('span');
+          type.className = `hero-search__type hero-search__type--${result.type === '案例' ? 'case' : 'article'}`;
+          type.textContent = result.type;
+          const title = document.createElement('span');
+          title.className = 'hero-search__title';
+          title.textContent = result.title;
+          link.append(type, title);
+          return link;
+        });
+        box.replaceChildren(...links);
+        box.hidden = false;
+      }
+
+      async function search(keyword: string, id: number) {
+        if (!keyword) { box.hidden = true; return; }
+        showMessage('搜尋中…');
+        try {
+          const data = await loadIndex();
+          if (id !== requestId) return;
+          const query = keyword.toLocaleLowerCase('zh-TW');
+          render(data.filter((item) =>
+            [item.title, item.description, ...item.tags].some((text) => text.toLocaleLowerCase('zh-TW').includes(query))
+          ));
+        } catch {
+          if (id === requestId) showMessage('搜尋暫時無法使用，請從下方主治項目瀏覽，或透過 LINE 詢問。');
+        }
+      }
+
+      let timer: ReturnType<typeof setTimeout> | undefined;
       input.addEventListener('input', () => {
         clearTimeout(timer);
-        timer = setTimeout(async () => {
-          const kw = input.value.trim();
-          if (!kw) { box.hidden = true; return; }
-          const data = await loadIndex();
-          const results = data.filter(item =>
-            item.title.includes(kw) ||
-            item.description.includes(kw) ||
-            item.tags.some(t => t.includes(kw))
-          );
-          render(results, kw);
-        }, 200);
+        const id = ++requestId;
+        box.hidden = true;
+        timer = setTimeout(() => { void search(input.value.trim(), id); }, 200);
       });
 
-      input.addEventListener('focus', loadIndex);
+      input.addEventListener('focus', () => { void loadIndex().catch(() => {}); });
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          clearTimeout(timer);
+          void search(input.value.trim(), ++requestId);
+        } else if (event.key === 'ArrowDown' && !box.hidden) {
+          const firstLink = box.querySelector('a');
+          if (firstLink) { event.preventDefault(); firstLink.focus(); }
+        }
+      });
+      function closeResults() {
+        clearTimeout(timer);
+        requestId++;
+        box.hidden = true;
+      }
+      root.addEventListener('keydown', (event: KeyboardEvent) => {
+        if (event.key === 'Escape') { closeResults(); input.focus(); }
+      });
       document.addEventListener('click', (e) => {
-        if (!e.target.closest('.hero-search')) box.hidden = true;
+        if (e.target instanceof Node && !root.contains(e.target)) closeResults();
       });
     })();
   </script>
@@ -249,25 +311,26 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
         <table class="hours-table">
           <thead>
             <tr>
-              <th></th>
-              {SITE.clinic.hours.map((h) => <th>{h.day}</th>)}
+              <th scope="col"><span class="sr-only">看診時段</span></th>
+              {SITE.clinic.hours.map((h) => <th scope="col">{h.day}</th>)}
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.amTime}</td>
+              <th scope="row" style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.amTime}</th>
               {SITE.clinic.hours.map((h) => (
-                <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`}></span></td>
+                <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`} aria-hidden="true"></span><span class="sr-only">{h.am ? '看診' : '無門診'}</span></td>
               ))}
             </tr>
             <tr>
-              <td style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.pmTime}</td>
+              <th scope="row" style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.pmTime}</th>
               {SITE.clinic.hours.map((h) => (
-                <td><span class={`hours-dot hours-dot--${h.pm ? 'on' : 'off'}`}></span></td>
+                <td><span class={`hours-dot hours-dot--${h.pm ? 'on' : 'off'}`} aria-hidden="true"></span><span class="sr-only">{h.pm ? '看診' : '無門診'}</span></td>
               ))}
             </tr>
           </tbody>
         </table>
+        <p style="font-size:0.8rem; margin-top:0.75rem;">綠點為看診時段；門診異動請以診所公告或 LINE 確認。</p>
       </div>
     </div>
   </section>
