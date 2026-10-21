@@ -4,7 +4,9 @@ description: "患者 L4/5 椎間盤突出合併右側神經根壓迫，腰臀痛
 updatedDate: 2026-10-21
 publishDate: 2025-11-12
 tags: ["椎間盤突出", "坐骨神經痛", "針刀治療", "腰痛", "疼痛治療"]
-cover: ""
+cover: "/images/posts/disc-herniation-three-years-acupotomy.jpg"
+coverAlt: "椎間盤結構與不同突出形態的示意圖"
+coverCaption: "椎間盤結構示意，非本篇個案的影像檢查或治療前後比較。"
 summary: "椎間盤突出是否需要手術，要看神經功能、病程與生活受限程度。本案保守治療後回報改善，但沒有追蹤影像證明椎間盤回縮。自然吸收的文獻也不能證明針刀或放鬆肌肉能把突出的椎間盤推回去。"
 references:
   - {"title": "VA/DoD 下背痛臨床指引（2022）", "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/pain/lbp/index.asp", "note": "供腰痛紅旗、檢查與一般照護閱讀；不直接證明針刀或 AMCT 的療效。"}

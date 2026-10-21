@@ -4,7 +4,9 @@ description: "30 多歲女性右肩到手腕疼痛、麻感與拿物無力，評
 updatedDate: 2026-10-21
 publishDate: 2025-12-26
 tags: ["頸椎病", "針刀治療", "針灸", "疼痛治療"]
-cover: ""
+cover: "/images/posts/cervical-radiculopathy-acupotomy.jpg"
+coverAlt: "頸部與肩胛區疼痛分布示意圖，標有不同頸椎節段"
+coverCaption: "頸肩疼痛分布示意，不能單憑痛區判定病因或神經壓迫位置。"
 summary: "手臂麻痛與無力可能涉及頸椎神經根，也可能來自周邊神經或肩部問題。不能只靠壓痛點確認神經壓迫位置；症狀改善也不等於已解除結構性壓迫。本案保留治療回饋，並說明應持續追蹤的神經功能變化。"
 references:
   - {"title": "頸部疼痛臨床指引：Neck Pain, Revision 2017", "url": "https://pubmed.ncbi.nlm.nih.gov/28666405/", "note": "供頸痛、放射症狀與復健評估延伸閱讀，不代表已確認本案神經壓迫部位。"}
