@@ -15,7 +15,7 @@ const { references, isCase = false } = Astro.props;
 {references.length > 0 && (
   <section class="article-references" aria-labelledby="references-heading">
     <h2 id="references-heading">參考資料與延伸閱讀</h2>
-    <p class="reference-intro">以下資料支援文中標示的一般醫學說明，並非對本篇個案處方或療效的直接驗證。</p>
+    <p class="reference-intro">以下連結提供相關醫學資料，每筆附註說明適用範圍與限制。</p>
     <ol>
       {references.map((reference) => (
         <li>
