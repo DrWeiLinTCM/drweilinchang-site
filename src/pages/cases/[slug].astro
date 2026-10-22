@@ -19,7 +19,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
     <div class="wrap wrap-narrow">
       <header class="article-header">
         <div class="article-meta">作者：<a href="/about/" rel="author">{SITE.doctor.fullName}</a></div>
-        <div class="article-meta">{fmt(post.data.publishDate)}{post.data.updatedDate && ` · 更新於 ${fmt(post.data.updatedDate)}`}</div>
+        <div class="article-meta">{fmt(post.data.publishDate)}</div>
         <h1 class="article-title">{post.data.title}</h1>
         <p class="article-desc">{post.data.description}</p>
       </header>
