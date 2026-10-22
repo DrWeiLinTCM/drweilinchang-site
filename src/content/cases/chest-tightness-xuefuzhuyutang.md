@@ -4,7 +4,9 @@ description: "50 歲男性胸悶、咳嗽與左肋不適約兩個月，採中藥
 updatedDate: 2026-10-21
 publishDate: 2026-02-20
 tags: ["經方", "乾針", "針灸", "胸悶", "血府逐瘀湯"]
-cover: ""
+cover: "/images/posts/chest-tightness-xuefuzhuyutang.jpg"
+coverAlt: "醫師評估一位胸悶、肋骨疼痛與咳嗽患者的情境插圖"
+coverCaption: "問診情境示意。"
 summary: "本案採血府逐瘀湯合四逆散等，搭配肩背部針灸，回報當次胸悶減輕、第一週鬱悶感明顯改善。個案不能確認病因或區分各治療效果；胸悶合併呼吸困難等急性變化，仍需優先排除重要心肺病況。"
 references:
   - {"title": "AHA／ACC 胸痛評估與診斷指引（2021）", "url": "https://professional.heart.org/en/science-news/2021-guideline-for-the-evaluation-and-diagnosis-of-chest-pain/top-things-to-know", "note": "說明急性胸部不適的風險評估；過去檢查正常或治療後改善，不能排除新的急症。"}

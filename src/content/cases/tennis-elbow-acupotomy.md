@@ -4,7 +4,9 @@ description: "60 多歲男性手肘外側痛八個月，接受針刀與乾針四
 updatedDate: 2026-10-21
 publishDate: 2026-06-01
 tags: ["網球肘", "針刀治療", "乾針", "疼痛治療", "運動傷害"]
-cover: ""
+cover: "/images/posts/tennis-elbow-acupotomy.jpg"
+coverAlt: "持網球拍揮拍的人物，手肘位置以紅圈標示"
+coverCaption: "手肘疼痛位置示意。"
 summary: "網球肘不只與網球有關，慢性症狀常涉及肌腱病變，不能簡化為單純發炎。本案四次治療後回報改善，但沒有對照或組織檢查可證明修復加快，也不能宣稱針刀普遍優於針灸。"
 references:
   - {"title": "Lateral Elbow Pain and Muscle Function Impairments（2022）", "url": "https://pubmed.ncbi.nlm.nih.gov/36453071/", "note": "外側肘肌腱病變的評估與復健指引；不直接驗證本案的針刀組合療法。"}

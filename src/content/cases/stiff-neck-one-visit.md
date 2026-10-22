@@ -4,7 +4,9 @@ description: "女性患者急性頸痛，右轉約 10 度，接受手法、AMCT 
 updatedDate: 2026-10-21
 publishDate: 2026-03-24
 tags: ["落枕", "乾針", "AMCT 整脊", "針灸", "頸椎病"]
-cover: ""
+cover: "/images/posts/stiff-neck-one-visit.jpg"
+coverAlt: "握拳手部的後谿穴 SI3 位置示意圖"
+coverCaption: "後谿穴位置示意。"
 summary: "本案右轉活動在當次組合治療後改善，屬個別回饋，沒有長期追蹤可判定復發或持續效果。落枕是俗稱，不能只分成兩種病因，也不能由療效反應確認關節已復位；先釐清警訊與個人耐受度更重要。"
 references:
   - {"title": "頸部疼痛臨床指引：Neck Pain, Revision 2017", "url": "https://pubmed.ncbi.nlm.nih.gov/28666405/", "note": "供頸痛、放射症狀與復健評估延伸閱讀，不代表已確認本案神經壓迫部位。"}

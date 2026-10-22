@@ -4,7 +4,9 @@ description: "30 多歲女性頭痛約三年，月經前後及吹風時加重，
 updatedDate: 2026-10-21
 publishDate: 2026-04-13
 tags: ["失眠", "經前症候群", "偏頭痛", "經方", "傷寒論", "小柴胡湯"]
-cover: ""
+cover: "/images/posts/menstrual-migraine-insomnia.jpg"
+coverAlt: "小柴胡湯與吳茱萸湯的中藥材及辨證概念圖"
+coverCaption: "方藥概念示意；個案辨證與用藥說明請見內文。"
 summary: "月經可能影響偏頭痛發作，但需看頭痛特徵與週期紀錄，不能僅由經期加重就確認類型。本案依少陽、厥陰與脾胃相關辨證治療後回報改善；寒熱是中醫分類，不等於腦部溫度、荷爾蒙或神經活性的實際量測。"
 references:
   - {"title": "ICHD-3：月經相關無預兆偏頭痛", "url": "https://ichd-3.org/appendix/a1-migraine/a1-1-migraine-without-aura/a1-1-2-menstrually-related-migraine-without-aura/", "note": "說明發作與月經時間的診斷關係；不能僅憑經期頭痛就確認偏頭痛類型。"}

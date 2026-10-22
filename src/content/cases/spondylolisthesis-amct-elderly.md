@@ -4,7 +4,9 @@ description: "80 歲女性輕度腰椎滑脫，腰髖疼痛影響游泳與生活
 updatedDate: 2026-10-21
 publishDate: 2026-05-04
 tags: ["腰椎滑脫", "坐骨神經痛", "AMCT 整脊", "董氏奇穴", "針灸", "腰痛"]
-cover: ""
+cover: "/images/posts/spondylolisthesis-amct-elderly.jpg"
+coverAlt: "正常腰椎與腰椎滑脫的對照示意圖"
+coverCaption: "腰椎滑脫的結構示意。"
 summary: "本案依姿勢耐受度調整為仰躺、遠端針灸，並搭配 AMCT，四次後回報腰髖痛減輕、減少護腰與止痛藥使用並恢復游泳。十多年的腳底麻仍在，須另外評估；不能宣稱器械式手法對所有長輩都安全或已矯正滑脫。"
 references:
   - {"title": "VA/DoD 下背痛臨床指引（2022）", "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/pain/lbp/index.asp", "note": "供腰痛紅旗、檢查與一般照護閱讀；不直接證明針刀或 AMCT 的療效。"}

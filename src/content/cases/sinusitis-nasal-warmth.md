@@ -4,7 +4,9 @@ description: "30 歲男性鼻塞、黃稠鼻涕與夜咳，治療後回報鼻涕
 updatedDate: 2026-10-21
 publishDate: 2026-01-27
 tags: ["鼻竇炎", "感冒", "經方", "衛教"]
-cover: ""
+cover: "/images/posts/sinusitis-nasal-warmth.jpg"
+coverAlt: "戴口罩與足部保暖的情境插圖"
+coverCaption: "保暖概念示意；相關研究限制與照護提醒請見內文。"
 summary: "急性鼻部症狀要看病程與整體表現，不能只用鼻涕顏色判斷是否需要抗生素。本案回報短期改善，尚不能確認病原或排除自然恢復。鼻腔溫度與抗病毒反應的基礎研究有研究價值，但不等於熱飲或保暖已被證實能縮短感染病程。"
 references:
   - {"title": "AAO-HNS 成人鼻竇炎臨床指引更新（2025）", "url": "https://pubmed.ncbi.nlm.nih.gov/40742114/", "note": "供成人急性鼻竇炎的診斷與治療閱讀，不能只憑鼻涕顏色判斷病原。"}

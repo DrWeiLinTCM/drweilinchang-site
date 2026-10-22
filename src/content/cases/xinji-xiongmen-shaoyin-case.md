@@ -4,7 +4,9 @@ description: "30 多歲女性在受驚嚇後出現胸悶、心悸，曾接受心
 updatedDate: 2026-10-21
 publishDate: 2026-05-27
 tags: ["心悸", "胸悶", "慢性疲勞", "少陰病", "茯苓四逆湯", "真武湯", "理中湯", "傷寒論", "經方"]
-cover: ""
+cover: "/images/posts/xinji-xiongmen-shaoyin-case.jpg"
+coverAlt: "胸悶、心悸與疲倦個案的中藥處方紀錄局部照片"
+coverCaption: "個案處方紀錄，非通用處方；用藥需個別評估。"
 summary: "本案從少陰偏虛寒方向調整用方，後續轉以脾胃相關辨證處理，半年後回報多數症狀緩解。這不等於證實心臟、下視丘或水液代謝的機轉；過去心臟檢查正常，也不能排除新發作的胸痛或心律問題。"
 references:
   - {"title": "AHA／ACC 胸痛評估與診斷指引（2021）", "url": "https://professional.heart.org/en/science-news/2021-guideline-for-the-evaluation-and-diagnosis-of-chest-pain/top-things-to-know", "note": "說明急性胸部不適的風險評估；過去檢查正常或治療後改善，不能排除新的急症。"}

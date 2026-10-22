@@ -4,7 +4,9 @@ description: "29 歲男性右肩舊傷，摔傷後肩胛周圍疼痛並延伸到
 updatedDate: 2026-10-21
 publishDate: 2026-04-01
 tags: ["膏肓痛", "乾針", "AMCT 整脊", "針灸", "疼痛治療"]
-cover: ""
+cover: "/images/posts/gaohuang-shoulder-dry-needling.jpg"
+coverAlt: "人物手扶肩背，並標示肩胛骨與膏肓痛範圍的示意照片"
+coverCaption: "肩背疼痛位置示意。"
 summary: "肩胛內側疼痛俗稱膏肓痛，可能涉及頸部、肩部、肌筋膜或其他原因。本案三次治療後回報活動恢復與疼痛減輕，但不能把結果歸因於某一項治療；肌肉抽動與皮節分布也不等於精準確認病灶。"
 references:
   - {"title": "頸部疼痛臨床指引：Neck Pain, Revision 2017", "url": "https://pubmed.ncbi.nlm.nih.gov/28666405/", "note": "供頸痛、放射症狀與復健評估延伸閱讀，不代表已確認本案神經壓迫部位。"}

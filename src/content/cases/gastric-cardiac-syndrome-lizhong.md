@@ -4,7 +4,9 @@ description: "患者胃痛一年以上，合併左胸與肋骨不適，曾接受
 updatedDate: 2026-10-21
 publishDate: 2026-01-15
 tags: ["胃痛", "胃食道逆流", "經方", "理中湯", "心悸"]
-cover: ""
+cover: "/images/posts/gastric-cardiac-syndrome-lizhong.jpg"
+coverAlt: "胃部、橫膈膜及胸腔相對位置的示意圖"
+coverCaption: "構造與症狀概念示意，不能由圖判定胸悶或呼吸不順的原因。"
 summary: "胃食道逆流等消化道問題可能伴隨胸部不適，但胸悶與呼吸困難要先依當次風險評估，不能只憑心臟檢查曾正常就歸因於脹氣。本案以理中湯合安中散治療後回報改善，是個別經驗，不能確認胃部壓迫心肺或「胃心症候群」的機轉。"
 references:
   - {"title": "AHA／ACC 胸痛評估與診斷指引（2021）", "url": "https://professional.heart.org/en/science-news/2021-guideline-for-the-evaluation-and-diagnosis-of-chest-pain/top-things-to-know", "note": "說明急性胸部不適的風險評估；過去檢查正常或治療後改善，不能排除新的急症。"}

@@ -4,7 +4,9 @@ description: "60 多歲女性便秘一年，合併胃食道逆流與胃部不適
 updatedDate: 2026-10-21
 publishDate: 2026-05-20
 tags: ["便秘", "胃食道逆流", "經方", "理中湯", "虛寒性便秘", "傷寒論"]
-cover: ""
+cover: "/images/posts/cold-constipation-lizhong.jpg"
+coverAlt: "便秘合併怕冷與腹部不適的中醫辨證概念圖"
+coverCaption: "中醫辨證概念示意；仍需依個別症狀與檢查評估。"
 summary: "本案採理中湯合麻子仁丸等辨證處方，三週後排便約兩天一次，兩個月後回報較順暢。中醫虛寒是辨證分類，不能直接等於已確認腸道蠕動慢；便秘仍需考慮藥物、飲食、排便功能與其他疾病。"
 references:
   - {"title": "AGA／ACG 慢性原發性便秘藥物治療指引（2023）", "url": "https://pubmed.ncbi.nlm.nih.gov/37204227/", "note": "介紹不同便秘用藥的證據，不能依藥物的寒熱分類就判定其長期安全性。"}
