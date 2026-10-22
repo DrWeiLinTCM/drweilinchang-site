@@ -4,7 +4,9 @@ description: "29 歲男性長期疲倦、怕冷、食慾差與情緒困擾，原
 updatedDate: 2026-10-21
 publishDate: 2026-03-11
 tags: ["慢性疲勞", "經方", "傷寒論", "少陰病", "失眠"]
-cover: ""
+cover: "/images/posts/shaoyin-fatigue-fuling-sini.jpg"
+coverAlt: "茯苓四逆湯的中藥材示意圖"
+coverCaption: "方藥概念示意；用藥需依個別狀況評估。"
 summary: "疲倦、怕冷與心情低落可能涉及睡眠、藥物、甲狀腺或情緒等不同原因。本案以茯苓四逆湯方向治療後有改善回饋，但中醫少陰病不能直接等同前額葉功能低落，也不能由此證明已修復神經或內分泌功能。"
 references:
   - {"title": "NIDDK：甲狀腺功能低下", "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/hypothyroidism", "note": "怕冷與疲倦可能有不同原因；是否需驗血等檢查，由醫師依症狀判斷。"}

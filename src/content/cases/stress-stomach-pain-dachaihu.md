@@ -4,7 +4,9 @@ description: "45 歲女性飯後胃痛、夜間灼熱與逆流，壓力大時加
 updatedDate: 2026-10-21
 publishDate: 2026-03-01
 tags: ["胃痛", "胃食道逆流", "經方", "自律神經失調", "腸腦軸"]
-cover: ""
+cover: "/images/posts/stress-stomach-pain-dachaihu.jpg"
+coverAlt: "食道、胃與下食道括約肌及胃內容物逆流方向的示意圖"
+coverCaption: "胃食道逆流的構造示意。"
 summary: "本案採大柴胡湯合黃連湯等方向，患者一週後回報夜間逆流減少，四週後胃痛較少。壓力可能影響症狀，但不能直接等同自律神經疾病；中醫寒熱辨證與胃酸、括約肌功能的量測也不同。"
 references:
   - {"title": "ACG 胃食道逆流臨床指引（2022）", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/", "note": "說明逆流疾病的評估、抑酸治療與生活調整；不驗證本篇中藥處方。"}

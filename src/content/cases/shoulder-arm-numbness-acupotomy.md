@@ -4,7 +4,9 @@ description: "60 歲小兒麻痺患者長期使用拐杖，出現肩臂麻痛、
 updatedDate: 2026-10-21
 publishDate: 2026-01-20
 tags: ["頸椎病", "針刀治療", "五十肩", "疼痛治療"]
-cover: ""
+cover: "/images/posts/shoulder-arm-numbness-acupotomy.jpg"
+coverAlt: "拐杖頂端壓迫腋下與臂神經叢位置的解剖示意圖"
+coverCaption: "拐杖與腋下神經位置示意。"
 summary: "肩臂麻痛與無力可能涉及頸椎、周邊神經、肩部與長期負荷等問題。本案接受針刀後回報改善，但沒有完整神經檢查或影像資料可確認壓迫位置；辦公族的姿勢也不能直接類比成同一種拐杖傷害。"
 references:
   - {"title": "頸部疼痛臨床指引：Neck Pain, Revision 2017", "url": "https://pubmed.ncbi.nlm.nih.gov/28666405/", "note": "供頸痛、放射症狀與復健評估延伸閱讀，不代表已確認本案神經壓迫部位。"}

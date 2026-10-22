@@ -4,7 +4,9 @@ description: "兩位腹瀉、脹氣與食慾差的患者，因寒熱感受及舌
 updatedDate: 2026-10-21
 publishDate: 2026-03-04
 tags: ["腹瀉", "胃痛", "經方", "腸胃炎", "理中湯", "藿香正氣散"]
-cover: ""
+cover: "/images/posts/acute-gastroenteritis-two-cases.png"
+coverAlt: "藿香正氣散的中藥組成與中醫方義整理圖"
+coverCaption: "方藥概念整理；個案照護與補液重點請見內文。"
 summary: "急性腹瀉的照護重點是避免脫水並評估病因。本文兩位患者在五天後回報改善，呈現中醫不同辨證方向；但沒有對照或病原資料，不能證明療程縮短。口服電解質補充液與適當進食，比單純喝淡鹽水更有明確依據。"
 references:
   - {"title": "IDSA 感染性腹瀉臨床指引（2017）", "url": "https://www.idsociety.org/practice-guideline/infectious-diarrhea/", "note": "說明口服補液、進食及症狀藥物的適用情況；不是中藥治療的比較試驗。"}

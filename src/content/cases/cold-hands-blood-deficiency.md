@@ -4,7 +4,9 @@ description: "40 多歲女性平時跑步、爬山，仍有手腳冰冷、眼乾
 updatedDate: 2026-10-21
 publishDate: 2026-01-07
 tags: ["經方", "當歸四逆湯", "手腳冰冷", "月經不規律"]
-cover: ""
+cover: "/images/posts/cold-hands-blood-deficiency.jpg"
+coverAlt: "個案中藥處方紀錄的局部照片"
+coverCaption: "個案處方紀錄，非通用處方；用藥需個別評估。"
 summary: "手腳冰冷需看環境、血管反應、藥物及其他症狀，不能只由運動能力判斷原因。本案採當歸四逆湯合四物湯方向治療後回報較暖；中醫血虛與陽虛是辨證概念，不能當作自行選藥或限制運動的檢測表。"
 references:
   - {"title": "NIAMS：雷諾氏現象", "url": "https://www.niams.nih.gov/health-topics/raynauds-phenomenon", "note": "手指遇冷或壓力而變色、冰冷、麻痛時，需考慮血管反應等原因。"}

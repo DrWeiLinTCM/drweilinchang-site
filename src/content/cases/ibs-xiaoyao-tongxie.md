@@ -4,7 +4,9 @@ description: "高中生在上學日乾嘔、腹痛與腹瀉，假日較少症狀
 updatedDate: 2026-10-21
 publishDate: 2026-04-24
 tags: ["腸躁症", "腹瀉", "經方", "自律神經失調", "腸腦軸"]
-cover: ""
+cover: "/images/posts/ibs-xiaoyao-tongxie.jpg"
+coverAlt: "情緒壓力與腸胃不適的中醫概念及腸躁症常見表現整理圖"
+coverCaption: "中醫概念與症狀示意；診斷條件與個案限制請見內文。"
 summary: "腸躁症屬腸腦互動障礙，壓力可能參與，但不是唯一原因，也不能用「放假就好」直接確診。本案一個月後平日症狀減少，考試前仍可能復發；這是追蹤觀察，尚不能確認長期療效。中醫肝脾辨證也不能直接等同自律神經與消化器官。"
 references:
   - {"title": "ACG 腸躁症臨床指引（2021）", "url": "https://pubmed.ncbi.nlm.nih.gov/33315591/", "note": "成人腸躁症的評估與治療架構；本篇為青少年個案，不能直接套用成人飲食或用藥方案。"}
