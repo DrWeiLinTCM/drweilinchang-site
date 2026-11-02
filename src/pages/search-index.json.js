@@ -9,14 +9,14 @@ export async function GET() {
       title: p.data.title,
       description: p.data.description,
       tags: p.data.tags,
-      url: `/cases/${p.slug}/`,
+      url: `/cases/${p.id}/`,
     })),
     ...articles.map((p) => ({
       type: '知識',
       title: p.data.title,
       description: p.data.description,
       tags: p.data.tags,
-      url: `/articles/${p.slug}/`,
+      url: `/articles/${p.id}/`,
     })),
   ];
   return new Response(JSON.stringify(items), {

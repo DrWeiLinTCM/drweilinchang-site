@@ -9,8 +9,8 @@ export async function GET() {
     { url:'/cases/', priority:'0.9', freq:'weekly' },
     { url:'/articles/', priority:'0.9', freq:'weekly' },
   ];
-  cases.forEach(p => pages.push({ url:`/cases/${p.slug}/`, priority:'0.8', freq:'monthly', mod:(p.data.updatedDate||p.data.publishDate).toISOString() }));
-  articles.forEach(p => pages.push({ url:`/articles/${p.slug}/`, priority:'0.8', freq:'monthly', mod:(p.data.updatedDate||p.data.publishDate).toISOString() }));
+  cases.forEach(p => pages.push({ url:`/cases/${p.id}/`, priority:'0.8', freq:'monthly', mod:(p.data.updatedDate||p.data.publishDate).toISOString() }));
+  articles.forEach(p => pages.push({ url:`/articles/${p.id}/`, priority:'0.8', freq:'monthly', mod:(p.data.updatedDate||p.data.publishDate).toISOString() }));
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(e=>`  <url>\n    <loc>${SITE.url}${e.url}</loc>\n    <changefreq>${e.freq}</changefreq>\n    <priority>${e.priority}</priority>${e.mod?`\n    <lastmod>${e.mod}</lastmod>`:''}\n  </url>`).join('\n')}\n</urlset>`;
   return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 }
