@@ -256,9 +256,9 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
               )}
               <div class="post-card__body">
                 <div class="post-card__date">{fmtDate(post.data.publishDate)}</div>
-                <h3 class="post-card__title"><a href={`/cases/${post.slug}/`}>{post.data.title}</a></h3>
+                <h3 class="post-card__title"><a href={`/cases/${post.id}/`}>{post.data.title}</a></h3>
                 <p class="post-card__desc">{post.data.description}</p>
-                <a href={`/cases/${post.slug}/`} class="post-card__link">閱讀更多</a>
+                <a href={`/cases/${post.id}/`} class="post-card__link">閱讀更多</a>
               </div>
             </div>
           ))}
@@ -288,9 +288,9 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
               )}
               <div class="post-card__body">
                 <div class="post-card__date">{fmtDate(post.data.publishDate)}</div>
-                <h3 class="post-card__title"><a href={`/articles/${post.slug}/`}>{post.data.title}</a></h3>
+                <h3 class="post-card__title"><a href={`/articles/${post.id}/`}>{post.data.title}</a></h3>
                 <p class="post-card__desc">{post.data.description}</p>
-                <a href={`/articles/${post.slug}/`} class="post-card__link">閱讀更多</a>
+                <a href={`/articles/${post.id}/`} class="post-card__link">閱讀更多</a>
               </div>
             </div>
           ))}

@@ -7,6 +7,6 @@ export async function GET(ctx) {
   const all = [...cases.map(p=>({...p, prefix:'/cases/'})), ...articles.map(p=>({...p, prefix:'/articles/'}))];
   all.sort((a,b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
   return rss({ title: SITE.title, description: SITE.description, site: ctx.site,
-    items: all.map(p => ({ title:p.data.title, pubDate:p.data.publishDate, description:p.data.description, link:`${p.prefix}${p.slug}/`, categories:p.data.tags })),
+    items: all.map(p => ({ title:p.data.title, pubDate:p.data.publishDate, description:p.data.description, link:`${p.prefix}${p.id}/`, categories:p.data.tags })),
     customData: `<language>${SITE.lang}</language>` });
 }

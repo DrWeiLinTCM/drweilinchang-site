@@ -21,7 +21,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year:'numeric', month:'
           )}
           <div>
             <div class="post-card__date">{fmt(post.data.publishDate)}</div>
-            <h2 style="font-size:1.2rem; margin:0.4rem 0 0.5rem;"><a href={`/cases/${post.slug}/`}>{post.data.title}</a></h2>
+            <h2 style="font-size:1.2rem; margin:0.4rem 0 0.5rem;"><a href={`/cases/${post.id}/`}>{post.data.title}</a></h2>
             <p style="color:var(--color-ink-soft); font-size:0.93rem; line-height:1.7;">{post.data.description}</p>
           </div>
         </div>

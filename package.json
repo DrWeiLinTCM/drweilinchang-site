@@ -10,7 +10,10 @@
     "test": "npm run build && node scripts/verify-build.mjs"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.7",
-    "astro": "^4.16.18"
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^6.4.8"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
