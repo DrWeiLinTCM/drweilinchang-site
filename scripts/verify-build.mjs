@@ -40,6 +40,17 @@ assert(about.includes('腸躁症') && about.includes('膏肓痛'));
 const home = await read('index.html');
 assert.match(home, /aria-label="搜尋醫案與健康知識"/);
 assert(home.includes('看診') && home.includes('無門診'));
+assert(home.includes('13:00-16:30') && home.includes('自 11/9 起'), 'Home must show updated clinic hours and Monday start date.');
+assert(!home.includes('13:30'), 'Home must not show obsolete clinic hours.');
+const homeGraph = [...home.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .flatMap((match) => JSON.parse(match[1])['@graph'] || []);
+const clinic = homeGraph.find((node) => node['@type'] === 'MedicalClinic');
+assert(clinic, 'Home JSON-LD must contain a MedicalClinic.');
+assert.deepEqual(clinic.openingHoursSpecification, [
+  { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Monday', opens: '13:00', closes: '16:30', validFrom: '2026-11-09' },
+  { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday'], opens: '13:00', closes: '16:30' },
+  { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday'], opens: '17:00', closes: '20:30' },
+], 'Clinic structured hours must match the confirmed schedule.');
 const notFound = await read('404.html');
 assert(notFound.includes('找不到這個頁面'));
 assert.match(notFound, /name="robots" content="noindex, follow"/);

@@ -121,10 +121,11 @@ export const SITE = {
     fullName: '台北樂活中醫診所',
     address: '台北市大安區延吉街 153-2 號 4 樓',
     phone: '02 2740 0007',
+    telephoneE164: '+886-2-2740-0007',
     googleMapUrl: 'https://maps.app.goo.gl/2PiqkYLsP4BWocdFA',
     lineUrl: 'https://line.me/R/ti/p/@979rdnfb',
     hours: [
-      { day: '一', am: false, pm: false },
+      { day: '一', am: true, pm: false, amNote: '自 11/9 起' },
       { day: '二', am: true, pm: true },
       { day: '三', am: true, pm: true },
       { day: '四', am: false, pm: true },
@@ -132,8 +133,17 @@ export const SITE = {
       { day: '六', am: false, pm: false },
       { day: '日', am: false, pm: false },
     ],
-    amTime: '午診 13:30-16:30',
+    amTime: '午診 13:00-16:30',
     pmTime: '晚診 17:00-20:30',
+    hoursSummary: [
+      '午診：週一（自 11/9 起）、週二、週三 13:00–16:30',
+      '晚診：週二至週五 17:00–20:30',
+    ],
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Monday', opens: '13:00', closes: '16:30', validFrom: '2026-11-09' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday'], opens: '13:00', closes: '16:30' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday'], opens: '17:00', closes: '20:30' },
+    ],
   },
 
   nav: [
