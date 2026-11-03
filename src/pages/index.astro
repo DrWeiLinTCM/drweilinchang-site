@@ -333,7 +333,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
             <tr>
               <th scope="row" style="text-align:left; font-size:0.82rem; color:rgba(255,255,255,0.5); white-space:nowrap;">{SITE.clinic.amTime}</th>
               {SITE.clinic.hours.map((h) => (
-                <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`} aria-hidden="true"></span><span class="sr-only">{h.am ? '看診' : '無門診'}</span></td>
+                <td><span class={`hours-dot hours-dot--${h.am ? 'on' : 'off'}`} aria-hidden="true"></span><span class="sr-only">{h.am ? '看診' : '無門診'}</span>{h.amNote && <sup title={h.amNote}>＊</sup>}</td>
               ))}
             </tr>
             <tr>
@@ -344,6 +344,12 @@ const fmtDate = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', mo
             </tr>
           </tbody>
         </table>
+        {SITE.clinic.hours.filter((h) => h.amNote).map((h) => (
+          <p class="hours-note">＊週{h.day}午診{h.amNote}</p>
+        ))}
+        <div class="hours-summary">
+          {SITE.clinic.hoursSummary.map((line) => <p>{line}</p>)}
+        </div>
         <p style="font-size:0.8rem; margin-top:0.75rem;">綠點為看診時段；門診異動請以診所公告或 LINE 確認。</p>
       </div>
     </div>

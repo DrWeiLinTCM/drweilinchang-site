@@ -1,0 +1,55 @@
+草稿／DRAFT — 待醫師決定／Pending the doctor’s decision
+
+繁體中文
+
+本文件為授權草稿，尚待醫師確認；不因本草稿而授予任何使用權。
+
+© 2026 張瑋麟 / Dr. WeiLin Chang。起始年份：【待醫師決定】是否以 2026 年為起始年份。
+
+1. 內容
+
+src/content/ 中的文章與個案內容、圖片（public/images/ 及任何文章配圖），以及網站文字，除依原授權使用的第三方素材外，均為 © 張瑋麟 / Dr. WeiLin Chang。保留所有權利。重製、改作或再散布須事先取得書面許可。
+
+【待醫師決定】可選條款：是否允許引用短篇節錄，並註明作者姓名及連回原始頁面的連結；若允許，節錄長度上限及是否排除商業使用，均待醫師決定。本條款尚未生效，不構成引用授權。
+
+【待醫師決定】第三方圖庫圖片仍依其原始授權條款使用；來源記錄於文章 frontmatter 的 coverCredit／coverCreditUrl 欄位。此段文字待醫師確認，不另行授予第三方圖片的使用權。
+
+2. 程式碼
+
+原始碼、設定檔、指令稿與樣式的授權獨立於內容授權，尚未決定。在正式決定前，不授予任何程式碼授權，預設保留所有權利。
+
+【待醫師決定】請選擇，以下選項均尚未採用：
+(A) MIT License：寬鬆授權，允許他人在遵守授權條件下重複使用程式碼。
+(B) 保留所有權利：不授權重複使用。
+(C) 其他授權：例如 Apache-2.0，具體授權待醫師決定。
+
+醫療聲明：本站內容僅供衛教參考，不構成診療建議。
+
+授權聯絡方式：【待醫師決定】例如 Facebook 粉絲專頁 https://www.facebook.com/Dr.WeiLinChang/ 或電子郵件（地址待定）。
+
+English
+
+This document is a draft pending the doctor’s approval. This draft grants no rights of use.
+
+© 2026 張瑋麟 / Dr. WeiLin Chang. Starting year: 【待醫師決定】whether to use 2026 as the starting year.
+
+1. Content
+
+Articles and case content in src/content/, images (including public/images/ and any article images), and site text are © 張瑋麟 / Dr. WeiLin Chang, except third-party materials used under their original licenses. All rights reserved. Reproduction, adaptation, or redistribution requires prior written permission.
+
+【待醫師決定】Optional clause: whether short excerpts may be quoted with attribution (the author’s name) and a link back to the original page. If allowed, the maximum excerpt length and whether commercial use is excluded remain for the doctor to decide. This clause is not in effect and grants no permission to quote.
+
+【待醫師決定】Third-party stock images remain subject to their original licenses. Their sources are recorded in article frontmatter fields coverCredit/coverCreditUrl. This wording is pending the doctor’s approval and grants no additional rights to third-party images.
+
+2. Code
+
+The license for source code, configuration, scripts, and styles is separate from the content license and has NOT yet been decided. Until a decision is made, no code license is granted; all rights are reserved by default.
+
+【待醫師決定】Choose one; none of these options has been adopted:
+(A) MIT License: a permissive license allowing others to reuse the code under its terms.
+(B) All rights reserved: no reuse is licensed.
+(C) Other: for example, Apache-2.0; the specific license remains for the doctor to decide.
+
+Medical disclaimer: Site content is for health education reference only and does not constitute medical advice (本站內容僅供衛教參考，不構成診療建議).
+
+Permission contact: 【待醫師決定】for example, the Facebook page https://www.facebook.com/Dr.WeiLinChang/ or an email address (to be decided).

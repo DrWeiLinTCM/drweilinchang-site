@@ -151,6 +151,12 @@ main { flex: 1; }
 .hours-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .hours-table th, .hours-table td { padding: 0.5rem 0.75rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .hours-table th { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 0.82rem; }
+.hours-note, .hours-summary { font-size: 0.8rem; margin-top: 0.75rem; overflow-wrap: anywhere; }
+.hours-summary p { margin-bottom: 0.25rem; }
+@media (max-width: 600px) {
+  .hours-table th, .hours-table td { padding: 0.5rem 0.25rem; }
+  .hours-table sup { font-size: 0.6rem; }
+}
 .hours-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 .hours-dot--on { background: var(--color-accent); }
 .hours-dot--off { background: rgba(255,255,255,0.15); }
