@@ -1,19 +1,29 @@
 # 放上自己挑選的文章圖片
 
-## 配圖規則（醫師 2026-11-03 批准，必須遵守）
+## 配圖規則（依醫師 2026-11-09 決定，必須遵守）
+
+本站配圖標註依圖片實際性質，真實照片不一律標為示意圖。
 
 配圖只用三種：
+
 - ①醫師自己拍或提供的圖（含臉書原文圖），畫面沒有患者；
 - ②可商用、免授權的圖庫圖，記下來源網址；
 - ③自製示意圖。
-- 圖說寫「示意圖，非本文個案」＋來源。
+
+圖說依圖片實際性質標註：
+
+- ①醫師拍攝／醫師提供：`coverCaption` 依圖片內容如實描述；`coverCredit` 寫「張瑋麟醫師拍攝」、「張瑋麟醫師提供」或「張瑋麟醫師臉書」，不要硬加「示意圖，非本文個案」。
+- ②圖庫圖：`coverCaption` 寫「示意圖，非本文個案」＋簡短說明；`coverCredit`／`coverCreditUrl` 記圖庫來源。
+- ③自製示意圖：`coverCaption` 寫「示意圖，非本文個案」＋說明。
 - 不用：患者照片或可辨識的身體部位、處方／病歷畫面、LINE／訊息截圖、治療前後對比、來源不明的圖。唯一例外：醫師確認已取得病人同意，並針對那一張圖批准。
 
 ### 實務備註
 
 - 檔名使用英文小寫＋連字號，放在 `public/images/posts/`，例如 `<文章slug>-<描述>.jpg`。
-- 來源記在文章 frontmatter 的 `coverCredit`／`coverCreditUrl`；②一律在 `coverCreditUrl` 填圖庫原始頁面網址；①的 `coverCredit` 寫「張瑋麟醫師提供」或「張瑋麟醫師臉書」。
-- `coverCaption` 範例：「示意圖，非本文個案。來源：Unsplash」。
+- 來源記在文章 frontmatter 的 `coverCredit`／`coverCreditUrl`；②一律在 `coverCreditUrl` 填圖庫原始頁面網址；①的 `coverCredit` 寫「張瑋麟醫師拍攝」、「張瑋麟醫師提供」或「張瑋麟醫師臉書」。
+- ①醫師拍攝範例：`coverCaption: "診間內的診療桌與書架。"`，`coverCredit: "張瑋麟醫師拍攝"`。
+- ②圖庫圖範例：`coverCaption: "示意圖，非本文個案。人物坐在桌前，手扶頸部。"`，`coverCredit` 填攝影者及圖庫名稱，`coverCreditUrl` 填原始圖片頁面網址。
+- ③自製示意圖範例：`coverCaption: "示意圖，非本文個案。肩頸肌群位置說明。"`。
 - 保留授權頁面及查核日期的紀錄。
 
 ### 法規提醒（醫療法第 85、86 條）
@@ -31,7 +41,7 @@
 ```yaml
 cover: "/images/posts/neck-pain.jpg"
 coverAlt: "人物坐在桌前，手扶頸部"
-coverCaption: "肩頸不適情境示意，非本文個案照片。"
+coverCaption: "示意圖，非本文個案。人物坐在桌前，手扶頸部。"
 coverCredit: "攝影者姓名／素材網站"
 coverCreditUrl: "https://example.com/original-photo"
 ```
