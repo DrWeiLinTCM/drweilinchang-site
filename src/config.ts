@@ -125,7 +125,7 @@ export const SITE = {
     googleMapUrl: 'https://maps.app.goo.gl/2PiqkYLsP4BWocdFA',
     lineUrl: 'https://line.me/R/ti/p/@979rdnfb',
     hours: [
-      { day: '一', am: true, pm: false, amNote: '自 11/9 起' },
+      { day: '一', am: true, pm: false },
       { day: '二', am: true, pm: true },
       { day: '三', am: true, pm: true },
       { day: '四', am: false, pm: true },
@@ -136,12 +136,11 @@ export const SITE = {
     amTime: '午診 13:00-16:30',
     pmTime: '晚診 17:00-20:30',
     hoursSummary: [
-      '午診：週一（自 11/9 起）、週二、週三 13:00–16:30',
+      '午診：週一、週二、週三 13:00–16:30',
       '晚診：週二至週五 17:00–20:30',
     ],
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Monday', opens: '13:00', closes: '16:30', validFrom: '2026-11-09' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday'], opens: '13:00', closes: '16:30' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday'], opens: '13:00', closes: '16:30' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday'], opens: '17:00', closes: '20:30' },
     ],
   },
